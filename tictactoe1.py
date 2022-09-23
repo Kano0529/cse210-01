@@ -1,6 +1,9 @@
-"""The game of tic-tac-toe.
-   2 players (x or o) pick the number on the game board to line "x" or "o" in 
-   three consecutive row, column or diagonal line. 
+"""CSE210 Week1 Tic-Tac-Toe
+   Kano Bailey
+
+     The game of tic-tac-toe.
+     2 players (x or o) pick the number on the game board to line "x" or "o" in 
+     three consecutive row, column or diagonal line. 
 """
 
 slot = [1,2,3,4,5,6,7,8,9]
