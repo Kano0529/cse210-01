@@ -6,6 +6,9 @@
      three consecutive row, column or diagonal line. 
 """
 
+#from colorama import Fore, Style
+import os
+
 slot = [1,2,3,4,5,6,7,8,9]
 
 def main():
@@ -61,13 +64,24 @@ def print_game_board():
        It is called every time a player picks a number. 
     """
 
-    print(f"{slot[0]}|{slot[1]}|{slot[2]}")
-    print(f"-+-+-")
-    print(f"{slot[3]}|{slot[4]}|{slot[5]}")
-    print(f"-+-+-")
-    print(f"{slot[6]}|{slot[7]}|{slot[8]}")
-    print()
+    #print(f"{slot[0]}|{slot[1]}|{slot[2]}")
+    #print(f"-+-+-")
+    #print(f"{slot[3]}|{slot[4]}|{slot[5]}")
+    #print(f"-+-+-")
+    #print(f"{slot[6]}|{slot[7]}|{slot[8]}")
+    #print()
 
+    board = f"\
+        {slot[0]}|{slot[1]}|{slot[2]}{chr(10)}\
+        -+-+-{chr(10)}\
+        {slot[3]}|{slot[4]}|{slot[5]}{chr(10)}\
+        -+-+-{chr(10)}\
+        {slot[6]}|{slot[7]}|{slot[8]}{chr(10)}\
+        {chr(10)}      "
+
+    board = board.replace("x", '\033[31m'+"x" + '\033[39m')
+    board = board.replace("o", '\033[34m'+"o" + '\033[39m')
+    print(board)
 
 def check_input(player):
     """Function to get an input and checks if the input is a valid number 1 through 9.
