@@ -62,15 +62,10 @@ def main():
 def print_game_board():
     """Function to print out a game board.
        It is called every time a player picks a number. 
+       A player x is printed in red, and a player o is printed in blue.
     """
 
-    #print(f"{slot[0]}|{slot[1]}|{slot[2]}")
-    #print(f"-+-+-")
-    #print(f"{slot[3]}|{slot[4]}|{slot[5]}")
-    #print(f"-+-+-")
-    #print(f"{slot[6]}|{slot[7]}|{slot[8]}")
-    #print()
-
+    # board is a string of character, and has necessary information of the game board.
     board = f"\
         {slot[0]}|{slot[1]}|{slot[2]}{chr(10)}\
         -+-+-{chr(10)}\
@@ -79,8 +74,13 @@ def print_game_board():
         {slot[6]}|{slot[7]}|{slot[8]}{chr(10)}\
         {chr(10)}      "
 
+    # replace "x" with red colored "x" and reset the color.
     board = board.replace("x", '\033[31m'+"x" + '\033[39m')
+
+    # replace "o" with blue colored "o" and reset the color.
     board = board.replace("o", '\033[34m'+"o" + '\033[39m')
+
+    # prints the game board.
     print(board)
 
 def check_input(player):
